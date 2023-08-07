@@ -1,6 +1,6 @@
 {
   "name": "ts-rule-engine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Light weight forward chaining rule engine, written in typescript",
   "author": "Alex Eagle",
   "license": "MIT",
