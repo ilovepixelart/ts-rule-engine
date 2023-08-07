@@ -6,12 +6,12 @@ Light weight forward chaining rule engine, written in typescript
 [![npm](https://img.shields.io/npm/dt/ts-rule-engine)](https://www.npmjs.com/package/ts-rule-engine)
 [![GitHub](https://img.shields.io/github/license/ilovepixelart/ts-rule-engine)](https://github.com/ilovepixelart/ts-rule-engine/blob/main/LICENSE)
 \
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-migrate-mongoose&metric=coverage)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-migrate-mongoose)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-migrate-mongoose&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-migrate-mongoose)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-rule-engine&metric=coverage)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-rule-engine)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-rule-engine&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-rule-engine)
 \
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-migrate-mongoose&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-migrate-mongoose)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-migrate-mongoose&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-migrate-mongoose)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-migrate-mongoose&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-migrate-mongoose)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-rule-engine&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-rule-engine)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-rule-engine&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-rule-engine)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-rule-engine&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-rule-engine)
 
 [![npm](https://nodei.co/npm/ts-rule-engine.png)](https://www.npmjs.com/package/ts-rule-engine)
 
