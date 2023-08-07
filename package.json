@@ -1,0 +1,98 @@
+{
+  "name": "ts-rule-engine",
+  "version": "1.0.0",
+  "description": "Light weight forward chaining rule engine, written in typescript",
+  "author": "Alex Eagle",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ilovepixelart/ts-rule-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ilovepixelart/ts-rule-engine/issues"
+  },
+  "homepage": "https://github.com/ilovepixelart/ts-rule-engine#readme",
+  "directories": {
+    "examples": "examples"
+  },
+  "keywords": [
+    "backend",
+    "ts",
+    "typescript",
+    "swc",
+    "bre",
+    "rete",
+    "rule",
+    "rules",
+    "engine",
+    "rule engine",
+    "rules engine",
+    "javascript rule engine",
+    "js rule engine",
+    "forward chaining rule engine",
+    "inference system"
+  ],
+  "engines": {
+    "node": "^14.15.0 || ^16.10.0 || >=18.0.0"
+  },
+  "files": [
+    "dist",
+    "src",
+    "tests",
+    ".swcrc",
+    "tsconfig.json",
+    "jest.config.ts",
+    ".eslintrc",
+    ".eslintignore"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/types/rules.d.ts",
+        "default": "./dist/esm/rules.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/types/rules.d.ts",
+        "default": "./dist/cjs/rules.js"
+      }
+    }
+  },
+  "main": "dist/cjs/rules.js",
+  "types": "dist/cjs/types/rules.d.ts",
+  "scripts": {
+    "migrate": "node -r @swc/register src/bin.ts",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "eslint . --fix --ext .js,.ts",
+    "test": "jest --config jest.config.ts --detectOpenHandles --coverage",
+    "test:open": "npm run test && open-cli coverage/lcov-report/index.html",
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p config/tsconfig.cjs.json",
+    "build:esm": "tsc -p config/tsconfig.esm.json && mv ./dist/esm/rules.js ./dist/esm/rules.mjs",
+    "release": "npm run lint && npm run build && np"
+  },
+  "dependencies": {
+    "lodash.clonedeep": "4.5.0",
+    "lodash.isequal": "4.5.0"
+  },
+  "devDependencies": {
+    "@swc/cli": "0.1.62",
+    "@swc/helpers": "0.5.1",
+    "@swc/jest": "0.2.28",
+    "@types/jest": "29.5.3",
+    "@types/node": "18",
+    "@types/lodash.clonedeep": "4.5.7",
+    "@types/lodash.isequal": "4.5.6",
+    "@typescript-eslint/eslint-plugin": "6.3.0",
+    "@typescript-eslint/parser": "6.3.0",
+    "eslint": "8.46.0",
+    "eslint-plugin-jest": "27.2.3",
+    "eslint-plugin-jest-formatting": "3.1.0",
+    "eslint-plugin-sonarjs": "0.20.0",
+    "jest": "29.6.2",
+    "merge": "2.1.1",
+    "open-cli": "7.2.0",
+    "ts-node": "10.9.1",
+    "typescript": "5.1.6"
+  }
+}
