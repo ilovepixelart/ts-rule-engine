@@ -27,26 +27,26 @@ yarn add ts-rule-engine
 A rule will consist of a condition and action, id, name and weight. The condition is a function that returns a boolean value. The action is a function that will be executed if the condition is true. The action function will be passed the fact, { rule, stop }. The stop function will stop the rule engine from executing further rules. This way you can control the flow of the rule engine.
 
 ```typescript
-import type { Rule } from 'ts-rule-engine';
+import type { Rule } from 'ts-rule-engine'
 
 /* Define fact interface */
 interface Fact {
-  balance: number;
-  broke?: boolean;
+  balance: number
+  broke?: boolean
 }
 
 /* Define rule */
 const rule: Rule<Fact> = {
-  id: 1
+  id: 1,
   name: "Rule 1",
   weight: 1,
   condition: (fact) => {
-    return fact.balance < 5;
+    return fact.balance < 5
   },
   action: (fact, { stop }) => {
-    fact.broke = true;
+    fact.broke = true
     /* stop() will stop the rule engine from executing further rules */
-    stop();
+    stop()
   }
 }
 ```
@@ -62,16 +62,16 @@ A sample Fact may look like
 ```typescript
 /* Define fact interface */
 interface Fact {
-  application: string;
-  cost: number;
-  license?: string;
-  description?: string;
+  application: string
+  cost: number
+  license?: string
+  description?: string
 }
 
 /* Define fact */
 const fact: Fact = {
   application: "ts-rule-engine",
-  cost: 0,
+  cost: 0
 }
 ```
 
@@ -80,35 +80,35 @@ const fact: Fact = {
 The example below shows how to use the rule engine to apply a sample rule on a specific fact. Rules can be fed into the rule engine as Array of rules or as an individual rule object.
 
 ```typescript
-import { RuleEngine } from 'ts-rule-engine';
+import { RuleEngine } from 'ts-rule-engine'
 
 /* Define fact */
 const fact: Fact = {
   application: "ts-rule-engine",
   cost: 0,
-  license: ''
+  license: '',
   description: ''
 }
 
 /* Define rule */
 const rule: Rule<Fact> = {
   condition: (fact) => {
-    return fact.cost === 0);
+    return fact.cost === 0
   },
   consequence: (fact) => {
-    fact.license = 'MIT';
-    fact.description = "License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s";
-    fact.stop();
+    fact.license = 'MIT'
+    fact.description = "License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s"
+    fact.stop()
   },
 };
 
 /* Creating Rule Engine instance */
-const engine = new RuleEngine(fact);
-engine.addRule(rule);
+const engine = new RuleEngine(fact)
+engine.addRule(rule)
 /* For multiple rules, use engine.addRules(rules) */
-await engine.run();
+await engine.run()
 
-console.log(fact);
+console.log(fact)
 /*
 {
   application: "ts-rule-engine",
