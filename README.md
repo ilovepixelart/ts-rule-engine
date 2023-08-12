@@ -38,7 +38,7 @@ interface Fact {
 /* Define rule */
 const rule: Rule<Fact> = {
   id: 1,
-  name: "Rule 1",
+  name: 'Rule 1',
   weight: 1,
   condition: (fact) => {
     return fact.balance < 5
@@ -70,7 +70,7 @@ interface Fact {
 
 /* Define fact */
 const fact: Fact = {
-  application: "ts-rule-engine",
+  application: 'ts-rule-engine',
   cost: 0
 }
 ```
@@ -84,7 +84,7 @@ import { RuleEngine } from 'ts-rule-engine'
 
 /* Define fact */
 const fact: Fact = {
-  application: "ts-rule-engine",
+  application: 'ts-rule-engine',
   cost: 0,
   license: '',
   description: ''
@@ -97,7 +97,7 @@ const rule: Rule<Fact> = {
   },
   consequence: (fact) => {
     fact.license = 'MIT'
-    fact.description = "License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s"
+    fact.description = 'License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s'
     fact.stop()
   },
 };
@@ -111,10 +111,10 @@ await engine.run()
 console.log(fact)
 /*
 {
-  application: "ts-rule-engine",
+  application: 'ts-rule-engine',
   cost: 0,
   license: 'MIT',
-  reason: "License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s"
+  reason: 'License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s'
 }
 */
 ```
