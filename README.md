@@ -24,7 +24,7 @@ yarn add ts-rule-engine
 
 ### 1. Defining a Rule
 
-A rule will consist of a condition and action
+A rule will consist of a condition and action, id, name and weight. The condition is a function that returns a boolean value. The action is a function that will be executed if the condition is true. The action function will be passed the fact, { rule, stop }. The stop function will stop the rule engine from executing further rules. This way you can control the flow of the rule engine.
 
 ```typescript
 import type { Rule } from 'ts-rule-engine';
@@ -62,7 +62,6 @@ A sample Fact may look like
 ```typescript
 /* Define fact interface */
 interface Fact {
-  name: string;
   application: string;
   cost: number;
   license?: string;
@@ -71,7 +70,6 @@ interface Fact {
 
 /* Define fact */
 const fact: Fact = {
-  name: "Alex",
   application: "ts-rule-engine",
   cost: 0,
 }
@@ -82,15 +80,14 @@ const fact: Fact = {
 The example below shows how to use the rule engine to apply a sample rule on a specific fact. Rules can be fed into the rule engine as Array of rules or as an individual rule object.
 
 ```typescript
-const { RuleEngine } = require("ts-rule-engine");
+import { RuleEngine } from 'ts-rule-engine';
 
 /* Define fact */
 const fact: Fact = {
-  name: "Alex",
   application: "ts-rule-engine",
   cost: 0,
-  license: '?'
-  description: '?'
+  license: ''
+  description: ''
 }
 
 /* Define rule */
@@ -100,7 +97,7 @@ const rule: Rule<Fact> = {
   },
   consequence: (fact) => {
     fact.license = 'MIT';
-    fact.description = "Cost of use is free of charge";
+    fact.description = "License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s";
     fact.stop();
   },
 };
@@ -114,11 +111,10 @@ await engine.run();
 console.log(fact);
 /*
 {
-  name: "Alex",
   application: "ts-rule-engine",
   cost: 0,
   license: 'MIT',
-  reason: "Cost of use is free of charge"
+  reason: "License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s"
 }
 */
 ```

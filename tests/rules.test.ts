@@ -30,7 +30,7 @@ describe('Rules', function () {
         },
         action: (fact: Fact) => {
           fact.transactionTotal = 500
-        },
+        }
       }
   
       const engine = new RuleEngine(fact)
@@ -56,7 +56,7 @@ describe('Rules', function () {
         },
         action: (fact: Fact) => {
           fact.result = 'Custom Result'
-        },
+        }
       })
       
       engine.addRule({
@@ -67,7 +67,7 @@ describe('Rules', function () {
         },
         action: () => {
           return
-        },
+        }
       })
     
       await engine.run()
@@ -93,7 +93,7 @@ describe('Rules', function () {
           fact.result = true
           fact.ruleName = rule.name
           fact.ruleID = rule.id
-        },
+        }
       }
   
       const engine = new RuleEngine(fact)
@@ -109,7 +109,7 @@ describe('Rules', function () {
         card: 'VISA',
         transactionTotal: 400,
         x: true,
-        y: false,
+        y: false
       }
   
       const rules: Rule<Fact>[] = [
@@ -121,7 +121,7 @@ describe('Rules', function () {
           },
           action: (fact, { rule }) => {
             fact.ruleID = rule.id
-          },
+          }
         },
         {
           id: 'rule B',
@@ -131,7 +131,7 @@ describe('Rules', function () {
           },
           action: (fact, { rule }) => {
             fact.ruleID = rule.id
-          },
+          }
         },
         {
           id: 'rule C',
@@ -141,7 +141,7 @@ describe('Rules', function () {
           },
           action: (fact, { rule }) => {
             fact.ruleID = rule.id
-          },
+          }
         },
         {
           id: 'rule D',
@@ -151,7 +151,7 @@ describe('Rules', function () {
           },
           action: (fact, { rule }) => {
             fact.ruleID = rule.id
-          },
+          }
         },
         {
           id: 'rule E',
@@ -161,8 +161,8 @@ describe('Rules', function () {
           },
           action: (fact, { rule }) => {
             fact.ruleID = rule.id
-          },
-        },
+          }
+        }
       ]
       const engine = new RuleEngine(fact, { ignoreFactChanges: false })
       engine.addRules(rules)
@@ -188,7 +188,7 @@ describe('Rules', function () {
         action: async (fact: Fact) => {
           await wait(200)
           fact.result = false
-        },
+        }
       }
 
       const engine = new RuleEngine(fact, { ignoreFactChanges: true })
@@ -218,7 +218,7 @@ describe('Rules', function () {
             await wait(200)
             fact.result = rule.id
             stop()
-          },
+          }
         },
         {
           id: 'rule 2',
@@ -231,8 +231,8 @@ describe('Rules', function () {
           action: async (fact, { rule }) => {
             await wait(200)
             fact.result = rule.id
-          },
-        },
+          }
+        }
       ]
 
       const engine = new RuleEngine(fact)
@@ -278,8 +278,8 @@ describe('Rules', function () {
           action: async (fact, { rule }) => {
             await wait(200)
             fact.result = rule.id
-          },
-        },
+          }
+        }
       ]
 
       const engine = new RuleEngine(fact)
@@ -305,7 +305,7 @@ describe('Rules', function () {
         },
         action: async (fact) => {
           fact.result = false
-        },
+        }
       }
 
       const engine = new RuleEngine(fact)
@@ -328,7 +328,7 @@ describe('Rules', function () {
         },
         action: async () => {
           throw new Error('Error in action')
-        },
+        }
       }
 
       const engine = new RuleEngine(fact)
@@ -356,7 +356,7 @@ describe('Rules', function () {
           action: async (fact, { rule }) => {
             await wait(200)
             fact.result = rule.id
-          },
+          }
         },
         {
           id: 'rule 2',
@@ -369,8 +369,8 @@ describe('Rules', function () {
           action: async (fact, { rule }) => {
             await wait(200)
             fact.result = rule.id
-          },
-        },
+          }
+        }
       ]
 
       const engine = new RuleEngine(fact, { maxIterations: 1 })
@@ -398,7 +398,7 @@ describe('Rules', function () {
         },
         action: async (fact) => {
           fact.result = false
-        },
+        }
       }
 
       const engine = new RuleEngine(fact)
@@ -416,7 +416,7 @@ describe('Rules', function () {
         },
         action: async (fact) => {
           fact.result = true
-        },
+        }
       }
 
       engine.updateRule(rule.id, newRule)
