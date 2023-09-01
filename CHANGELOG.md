@@ -1,3 +1,22 @@
+<a name="v1.0.4"></a>
+# [v1.0.4](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.0.4) - 01 Sep 2023
+
+- Merge pull request [#15](https://github.com/ilovepixelart/ts-rule-engine/issues/15) from ilovepixelart/feature/dep  b8e49f7
+- NodeNext  8646d40
+- Dep  95dbdfd
+- Merge pull request [#9](https://github.com/ilovepixelart/ts-rule-engine/issues/9) from ilovepixelart/feature/dep  f9f5571
+- Dep  69130d4
+- Merge pull request [#7](https://github.com/ilovepixelart/ts-rule-engine/issues/7) from ilovepixelart/dependabot/npm_and_yarn/typescript-eslint/parser-6.4.0  afd4461
+- Merge pull request [#4](https://github.com/ilovepixelart/ts-rule-engine/issues/4) from ilovepixelart/dependabot/npm_and_yarn/jest-29.6.3  a825f80
+- Bump @typescript-eslint/parser from 6.3.0 to 6.4.0  e287644
+- Bump jest from 29.6.2 to 29.6.3  2617d0d
+- Update changelog for &quot;v1.0.3&quot;  74971a9
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.3...v1.0.4
+
+[Changes][v1.0.4]
+
+
 <a name="v1.0.3"></a>
 # [v1.0.3](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.0.3) - 14 Aug 2023
 
@@ -22,6 +41,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.0.4]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.3...v1.0.4
 [v1.0.3]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.2...v1.0.3
 [v1.0.2]: https://github.com/ilovepixelart/ts-rule-engine/tree/v1.0.2
 
