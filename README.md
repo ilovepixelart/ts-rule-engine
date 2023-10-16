@@ -1,6 +1,6 @@
 # ts-rule-engine
 
-Light weight rule engine, written in typescript
+Lightweight rule engine, written in typescript
 
 [![npm](https://img.shields.io/npm/v/ts-rule-engine)](https://www.npmjs.com/package/ts-rule-engine)
 [![npm](https://img.shields.io/npm/dt/ts-rule-engine)](https://www.npmjs.com/package/ts-rule-engine)
