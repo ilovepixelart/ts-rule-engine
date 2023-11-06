@@ -1,3 +1,16 @@
+<a name="v1.1.2"></a>
+# [v1.1.2](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.1.2) - 06 Nov 2023
+
+- Dep  ea45c24
+- Merge pull request [#30](https://github.com/ilovepixelart/ts-rule-engine/issues/30) from ilovepixelart/dependabot/npm_and_yarn/babel/traverse-7.23.2  48d238c
+- Bump @babel/traverse from 7.22.17 to 7.23.2  0a41890
+- Update changelog for &quot;v1.1.1&quot;  a6f5b78
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.1.1...v1.1.2
+
+[Changes][v1.1.2]
+
+
 <a name="v1.1.1"></a>
 # [v1.1.1](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.1.1) - 16 Oct 2023
 
@@ -68,6 +81,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.1.2]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.1.1...v1.1.2
 [v1.1.1]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.1.0...v1.1.1
 [v1.1.0]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.4...v1.1.0
 [v1.0.4]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.3...v1.0.4
