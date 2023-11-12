@@ -1,3 +1,17 @@
+<a name="v1.2.0"></a>
+# [v1.2.0](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.2.0) - 12 Nov 2023
+
+- Merge pull request [#36](https://github.com/ilovepixelart/ts-rule-engine/issues/36) from ilovepixelart/feature/tsconfig-eslint  5add70c
+- Dep  7619562
+- Engines  6e13d2f
+- Tsconfig strictest rules  ba10132
+- Update changelog for &quot;v1.1.2&quot;  c427e54
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.1.2...v1.2.0
+
+[Changes][v1.2.0]
+
+
 <a name="v1.1.2"></a>
 # [v1.1.2](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.1.2) - 06 Nov 2023
 
@@ -81,6 +95,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.2.0]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.1.2...v1.2.0
 [v1.1.2]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.1.1...v1.1.2
 [v1.1.1]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.1.0...v1.1.1
 [v1.1.0]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.4...v1.1.0
