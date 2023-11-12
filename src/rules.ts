@@ -24,7 +24,7 @@ export class RuleEngine<T> {
   private fact: T = {} as T
   private ignoreFactChanges: boolean
   private iteration: number
-  private maxIterations?: number
+  private maxIterations: number | null
   private terminate = false
 
   constructor(
@@ -34,7 +34,7 @@ export class RuleEngine<T> {
     this.fact = fact
     this.ignoreFactChanges = options.ignoreFactChanges ?? false
     this.iteration = 0
-    this.maxIterations = options.maxIterations 
+    this.maxIterations = options.maxIterations ?? null
   }
 
   addRule(rule: Rule<T>): void {
