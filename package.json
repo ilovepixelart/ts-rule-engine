@@ -78,7 +78,7 @@
     "@swc/cli": "0.1.62",
     "@swc/helpers": "0.5.3",
     "@swc/jest": "0.2.29",
-    "@types/jest": "29.5.8",
+    "@types/jest": "29.5.10",
     "@types/node": "20",
     "@types/lodash.clonedeep": "4.5.9",
     "@types/lodash.isequal": "4.5.8",
