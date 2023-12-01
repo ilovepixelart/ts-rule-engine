@@ -83,7 +83,7 @@
     "@types/lodash.clonedeep": "4.5.9",
     "@types/lodash.isequal": "4.5.8",
     "@typescript-eslint/eslint-plugin": "6.10.0",
-    "@typescript-eslint/parser": "6.10.0",
+    "@typescript-eslint/parser": "6.13.1",
     "eslint": "8.53.0",
     "eslint-plugin-jest": "27.6.0",
     "eslint-plugin-jest-formatting": "3.1.0",
