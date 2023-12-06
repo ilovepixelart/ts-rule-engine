@@ -1,3 +1,18 @@
+<a name="v1.2.1"></a>
+# [v1.2.1](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.2.1) - 06 Dec 2023
+
+- Merge pull request [#42](https://github.com/ilovepixelart/ts-rule-engine/issues/42) from ilovepixelart/feature/esm-support  e1fa803
+- Doc  01a0314
+- ESM support  f4f5227
+- System files ignore  928edb5
+- Delimiter style for interfaces  6589020
+- Update changelog for &quot;v1.2.0&quot;  4bfdee6
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.0...v1.2.1
+
+[Changes][v1.2.1]
+
+
 <a name="v1.2.0"></a>
 # [v1.2.0](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.2.0) - 12 Nov 2023
 
@@ -95,6 +110,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.2.1]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.0...v1.2.1
 [v1.2.0]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.1.2...v1.2.0
 [v1.1.2]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.1.1...v1.1.2
 [v1.1.1]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.1.0...v1.1.1
