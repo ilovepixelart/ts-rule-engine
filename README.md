@@ -15,11 +15,30 @@ Lightweight rule engine, written in typescript
 
 [![npm](https://nodei.co/npm/ts-rule-engine.png)](https://www.npmjs.com/package/ts-rule-engine)
 
+## Supports and tested with
+
+```json
+{
+  "node": "16.x || 18.x || 20.x",
+}
+```
+
+## Features
+
+- [x] Structure for rule definition
+- [x] Rerun rules after fact is updated
+- [x] Stop rule engine on any rule from executing further
+- [x] Infinite loop prevention with max iterations limit
+- [x] One time rule execution in sequence
+- [x] Rule weight for priority
+- [x] Supports ESM and CommonJS
+
 ## Installation
 
 ```bash
 npm install ts-rule-engine
 yarn add ts-rule-engine
+pnpm add ts-rule-engine
 ```
 
 ### 1. Defining a Rule
