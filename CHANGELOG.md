@@ -1,3 +1,15 @@
+<a name="v1.2.3"></a>
+# [v1.2.3](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.2.3) - 20 Jan 2024
+
+- Merge pull request [#49](https://github.com/ilovepixelart/ts-rule-engine/issues/49) from ilovepixelart/feature/dep  67d3589
+- Dep  8ecffcd
+- Update changelog for &quot;v1.2.2&quot;  1c12521
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.2...v1.2.3
+
+[Changes][v1.2.3]
+
+
 <a name="v1.2.2"></a>
 # [v1.2.2](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.2.2) - 09 Jan 2024
 
@@ -123,6 +135,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.2.3]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.2...v1.2.3
 [v1.2.2]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.1...v1.2.2
 [v1.2.1]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.0...v1.2.1
 [v1.2.0]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.1.2...v1.2.0
