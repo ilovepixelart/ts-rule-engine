@@ -78,7 +78,7 @@
   "devDependencies": {
     "@swc/cli": "0.3.4",
     "@swc/helpers": "0.5.3",
-    "@swc/jest": "0.2.31",
+    "@swc/jest": "0.2.34",
     "@types/jest": "29.5.11",
     "@types/node": "20",
     "@types/lodash.clonedeep": "4.5.9",
