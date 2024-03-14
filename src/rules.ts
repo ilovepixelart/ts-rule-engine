@@ -17,7 +17,7 @@ export interface Rule<T> {
 export interface RuleEngineOptions {
   ignoreFactChanges?: boolean
   maxIterations?: number
-} 
+}
 
 export class RuleEngine<T> {
   private rules: Rule<T>[] = []
@@ -29,7 +29,7 @@ export class RuleEngine<T> {
 
   constructor(
     fact: T = {} as T,
-    options: RuleEngineOptions = {}
+    options: RuleEngineOptions = {},
   ) {
     this.fact = fact
     this.ignoreFactChanges = options.ignoreFactChanges ?? false
@@ -75,7 +75,9 @@ export class RuleEngine<T> {
         }
 
         let message = `Evaluating rule: ${rule.name ?? rule.id}`
-        const condition = await rule.condition(this.fact, { rule, stop: () => { this.stop() } })
+        const condition = await rule.condition(this.fact, { rule, stop: () => {
+          this.stop()
+        } })
         if (condition) {
           message += ' (condition met)'
           console.info(message)
@@ -103,7 +105,9 @@ export class RuleEngine<T> {
   }
 
   private async executeRule(rule: Rule<T>): Promise<void> {
-    await rule.action(this.fact, { rule, stop: () => { this.stop() } } )
+    await rule.action(this.fact, { rule, stop: () => {
+      this.stop()
+    } })
     this.iteration++
     if (this.ignoreFactChanges) {
       this.removeRule(rule.id)

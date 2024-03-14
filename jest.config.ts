@@ -1,7 +1,7 @@
 const config = {
   roots: [
     '<rootDir>/src/',
-    '<rootDir>/tests/'
+    '<rootDir>/tests/',
   ],
   clearMocks: true,
   collectCoverage: true,
@@ -10,18 +10,18 @@ const config = {
     '!src/bin.ts',
     '!src/**/*.d.ts',
     '!src/interfaces/**/*.[jt]s?(x)',
-    '!src/template.ts'
+    '!src/template.ts',
   ],
   coverageDirectory: 'coverage',
   testMatch: [
-    '<rootDir>/tests/**/*.test.ts'
+    '<rootDir>/tests/**/*.test.ts',
   ],
   transform: {
-    '^.+\\.tsx?$': '@swc/jest'
+    '^.+\\.tsx?$': '@swc/jest',
   },
   testPathIgnorePatterns: [
-    'node_modules'
-  ]
+    'node_modules',
+  ],
 }
 
 export default config
