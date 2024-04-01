@@ -1,3 +1,33 @@
+<a name="v1.2.5"></a>
+# [v1.2.5](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.2.5) - 01 Apr 2024
+
+- Eslint  32a4fc6
+- Merge pull request [#63](https://github.com/ilovepixelart/ts-rule-engine/issues/63) from ilovepixelart/dependabot/npm_and_yarn/eslint-plugin-sonarjs-0.25.0  87dbf41
+- Merge pull request [#65](https://github.com/ilovepixelart/ts-rule-engine/issues/65) from ilovepixelart/dependabot/npm_and_yarn/types/node-20.12.2  3f7ddb9
+- Merge pull request [#66](https://github.com/ilovepixelart/ts-rule-engine/issues/66) from ilovepixelart/dependabot/npm_and_yarn/swc/helpers-0.5.8  c00af1b
+- Bump @swc/helpers from 0.5.6 to 0.5.8  840680f
+- Merge pull request [#67](https://github.com/ilovepixelart/ts-rule-engine/issues/67) from ilovepixelart/dependabot/npm_and_yarn/swc/cli-0.3.12  363f12c
+- Bump @swc/cli from 0.3.10 to 0.3.12  f5aebe7
+- Bump @types/node from 20.11.24 to 20.12.2  202501d
+- Bump eslint-plugin-sonarjs from 0.24.0 to 0.25.0  c5a5ffb
+- Merge pull request [#62](https://github.com/ilovepixelart/ts-rule-engine/issues/62) from ilovepixelart/feature/lint  92a1266
+- Lint  ae1725e
+- Merge pull request [#58](https://github.com/ilovepixelart/ts-rule-engine/issues/58) from ilovepixelart/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-7.1.0  4d7ade0
+- Bump @typescript-eslint/eslint-plugin from 7.0.2 to 7.1.0  a52782e
+- Merge pull request [#59](https://github.com/ilovepixelart/ts-rule-engine/issues/59) from ilovepixelart/dependabot/npm_and_yarn/swc/cli-0.3.10  8218d28
+- Merge pull request [#60](https://github.com/ilovepixelart/ts-rule-engine/issues/60) from ilovepixelart/dependabot/npm_and_yarn/types/node-20.11.24  6ce79dd
+- Merge pull request [#61](https://github.com/ilovepixelart/ts-rule-engine/issues/61) from ilovepixelart/dependabot/npm_and_yarn/typescript-eslint/parser-7.1.0  e7ce30c
+- Bump @typescript-eslint/parser from 7.0.2 to 7.1.0  04e454e
+- Bump @types/node from 20.8.10 to 20.11.24  6e7c1fe
+- Bump @swc/cli from 0.3.9 to 0.3.10  811c4ee
+- Skip sonar for forked PRs  c467664
+- Update changelog for v1.2.4  e661bc1
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.4...v1.2.5
+
+[Changes][v1.2.5]
+
+
 <a name="v1.2.4"></a>
 # [v1.2.4](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.2.4) - 24 Feb 2024
 
@@ -151,6 +181,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.2.5]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.4...v1.2.5
 [v1.2.4]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.3...v1.2.4
 [v1.2.3]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.2...v1.2.3
 [v1.2.2]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.1...v1.2.2
