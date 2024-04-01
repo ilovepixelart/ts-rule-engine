@@ -74,7 +74,7 @@ export class RuleEngine<T> {
           return
         }
 
-        let message = `Evaluating rule: ${rule.name ?? rule.id}`
+        let message = `Evaluating rule: ${rule.name ?? rule.id.toString()}`
         const condition = await rule.condition(this.fact, { rule, stop: () => {
           this.stop()
         } })
