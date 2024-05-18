@@ -1,3 +1,30 @@
+<a name="v1.3.0"></a>
+# [v1.3.0](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.3.0) - 18 May 2024
+
+- Merge pull request [#75](https://github.com/ilovepixelart/ts-rule-engine/issues/75) from ilovepixelart/feature/node22  5eba98f
+- Doc  7a2df0d
+- Node 22  913c44a
+- Merge pull request [#74](https://github.com/ilovepixelart/ts-rule-engine/issues/74) from ilovepixelart/feature/dep  dc8d477
+- Dep  fcac81c
+- Merge pull request [#73](https://github.com/ilovepixelart/ts-rule-engine/issues/73) from jaco-codexorbis/logger-option-support  4da45d2
+- Readme update  701a8f5
+- Merge pull request [#68](https://github.com/ilovepixelart/ts-rule-engine/issues/68) from ilovepixelart/dependabot/npm_and_yarn/typescript-eslint/parser-7.8.0  e429f1b
+- Bump @typescript-eslint/parser from 7.4.0 to 7.8.0  5d41cb5
+- Merge pull request [#69](https://github.com/ilovepixelart/ts-rule-engine/issues/69) from ilovepixelart/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-7.8.0  4c3feac
+- Merge pull request [#70](https://github.com/ilovepixelart/ts-rule-engine/issues/70) from ilovepixelart/dependabot/npm_and_yarn/types/node-20.12.7  e122324
+- Merge pull request [#72](https://github.com/ilovepixelart/ts-rule-engine/issues/72) from ilovepixelart/dependabot/npm_and_yarn/eslint-plugin-sonarjs-0.25.1  d0f13cf
+- Merge pull request [#71](https://github.com/ilovepixelart/ts-rule-engine/issues/71) from ilovepixelart/dependabot/npm_and_yarn/swc/helpers-0.5.11  d7d0103
+- Bump eslint-plugin-sonarjs from 0.25.0 to 0.25.1  f76a04a
+- Bump @swc/helpers from 0.5.8 to 0.5.11  85b7442
+- Bump @types/node from 20.12.2 to 20.12.7  d3b0552
+- Bump @typescript-eslint/eslint-plugin from 7.4.0 to 7.8.0  6ed1081
+- Update changelog for v1.2.5  329f4e9
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.5...v1.3.0
+
+[Changes][v1.3.0]
+
+
 <a name="v1.2.5"></a>
 # [v1.2.5](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.2.5) - 01 Apr 2024
 
@@ -181,6 +208,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.3.0]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.5...v1.3.0
 [v1.2.5]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.4...v1.2.5
 [v1.2.4]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.3...v1.2.4
 [v1.2.3]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.2...v1.2.3
