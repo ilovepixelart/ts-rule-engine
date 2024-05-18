@@ -32,6 +32,7 @@ Lightweight rule engine, written in typescript
 - [x] One time rule execution in sequence
 - [x] Rule weight for priority
 - [x] Supports ESM and CommonJS
+- [x] Logger interface for custom logging
 
 ## Installation
 
@@ -137,3 +138,68 @@ console.log(fact)
 }
 */
 ```
+
+### 4. Using the Rule Engine with Logger
+
+The example below shows how to use the rule engine with a custom logger. The logger should implement the Logger interface. If a logger is not provided, logs are written using the global `console` object.
+
+```typescript
+import { RuleEngine, Logger } from 'ts-rule-engine'
+
+/* Define fact */
+const fact: Fact = {
+  application: 'ts-rule-engine',
+  cost: 0,
+  license: '',
+  description: ''
+}
+
+/* Define rule */
+const rule: Rule<Fact> = {
+  condition: (fact) => {
+    return fact.cost === 0
+  },
+  action: (fact, { logger }) => {
+    logger.info('All Good')
+    fact.license = 'MIT'
+    fact.description = 'License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s'
+    fact.stop()
+  },
+};
+
+/* Custom Logger */
+class CustomLogger implements Logger {
+  messages: string[] = []
+
+  info(message?: string, ...optionalParams: string[]): void {
+    this.messages.push(message)
+  }
+
+  warn(message?: string, ...optionalParams: string[]): void {
+    this.messages.push(message)
+  }
+
+  error(message?: string, ...optionalParams: string[]): void {
+    this.messages.push(message)
+  }
+}
+
+/* Creating Rule Engine instance */
+const logger = new CustomLogger()
+const engine = new RuleEngine(fact, {logger})
+engine.addRule(rule)
+/* For multiple rules, use engine.addRules(rules) */
+await engine.run()
+
+// Check logger messages
+console.log(logger.messages)
+/*
+[
+  'Rule 1: Executing',
+  'Rule 1: Executed',
+  'Rule 1: Stopped'
+]
+*/
+
+```
+

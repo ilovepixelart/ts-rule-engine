@@ -4,6 +4,7 @@ import isEqual from 'lodash.isequal'
 export interface Data<T> {
   rule: Rule<T>
   stop: () => void
+  logger: Logger
 }
 
 export interface Rule<T> {
@@ -14,9 +15,16 @@ export interface Rule<T> {
   action: (fact: T, data: Data<T>) => Promise<void> | void
 }
 
+export interface Logger {
+  info: (message?: unknown, ...optionalParams: unknown[]) => void
+  warn: (message?: unknown, ...optionalParams: unknown[]) => void
+  error: (message?: unknown, ...optionalParams: unknown[]) => void
+}
+
 export interface RuleEngineOptions {
   ignoreFactChanges?: boolean
   maxIterations?: number
+  logger?: Logger
 }
 
 export class RuleEngine<T> {
@@ -26,6 +34,7 @@ export class RuleEngine<T> {
   private iteration: number
   private maxIterations: number | null
   private terminate = false
+  private logger: Logger
 
   constructor(
     fact: T = {} as T,
@@ -35,6 +44,7 @@ export class RuleEngine<T> {
     this.ignoreFactChanges = options.ignoreFactChanges ?? false
     this.iteration = 0
     this.maxIterations = options.maxIterations ?? null
+    this.logger = options.logger ?? console
   }
 
   addRule(rule: Rule<T>): void {
@@ -70,36 +80,36 @@ export class RuleEngine<T> {
       this.sort()
       for await (const rule of this.rules) {
         if (this.maxIterations && this.iteration >= this.maxIterations) {
-          console.info('Termination condition met. Maximum iterations reached.')
+          this.logger.info('Termination condition met. Maximum iterations reached.')
           return
         }
 
         let message = `Evaluating rule: ${rule.name ?? rule.id.toString()}`
         const condition = await rule.condition(this.fact, { rule, stop: () => {
           this.stop()
-        } })
+        }, logger: this.logger })
         if (condition) {
           message += ' (condition met)'
-          console.info(message)
+          this.logger.info(message)
           await this.executeRule(rule)
 
           if (this.terminate) {
-            console.info('Termination condition met based on action.')
+            this.logger.info('Termination condition met based on action.')
             return
           }
         } else {
           message += ' (skipped)'
-          console.info(message)
+          this.logger.info(message)
         }
       }
 
       if (!isEqual(before, this.fact) && !this.ignoreFactChanges) {
         await this.run()
       } else {
-        console.info('Rule engine finished. With total iterations:', this.iteration)
+        this.logger.info('Rule engine finished. With total iterations:', this.iteration)
       }
     } catch (error) {
-      console.error('Rule engine encountered an error: \n', error)
+      this.logger.error('Rule engine encountered an error: \n', error)
       throw error
     }
   }
@@ -107,7 +117,7 @@ export class RuleEngine<T> {
   private async executeRule(rule: Rule<T>): Promise<void> {
     await rule.action(this.fact, { rule, stop: () => {
       this.stop()
-    } })
+    }, logger: this.logger })
     this.iteration++
     if (this.ignoreFactChanges) {
       this.removeRule(rule.id)
