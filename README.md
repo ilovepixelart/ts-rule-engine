@@ -19,7 +19,7 @@ Lightweight rule engine, written in typescript
 
 ```json
 {
-  "node": "16.x || 18.x || 20.x",
+  "node": "18.x || 20.x || 22.x",
 }
 ```
 
