@@ -1,3 +1,23 @@
+<a name="v1.3.1"></a>
+# [v1.3.1](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.3.1) - 16 Jun 2024
+
+- Merge pull request [#81](https://github.com/ilovepixelart/ts-rule-engine/issues/81) from ilovepixelart/feature/dep  1f6e48a
+- Dep  f2c9927
+- Merge pull request [#80](https://github.com/ilovepixelart/ts-rule-engine/issues/80) from ilovepixelart/feature/upgrade-actions  5eb92f1
+- Upgrade actions  1f0254d
+- Merge pull request [#76](https://github.com/ilovepixelart/ts-rule-engine/issues/76) from ilovepixelart/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-7.11.0  cc98a90
+- Bump @typescript-eslint/eslint-plugin from 7.9.0 to 7.11.0  b2d5c20
+- Merge pull request [#77](https://github.com/ilovepixelart/ts-rule-engine/issues/77) from ilovepixelart/dependabot/npm_and_yarn/types/node-20.13.0  cb05b24
+- Merge pull request [#78](https://github.com/ilovepixelart/ts-rule-engine/issues/78) from ilovepixelart/dependabot/npm_and_yarn/typescript-eslint/parser-7.11.0  c8a99e3
+- Bump @typescript-eslint/parser from 7.9.0 to 7.11.0  d1a159c
+- Bump @types/node from 20.12.7 to 20.13.0  fb99dcf
+- Update changelog for v1.3.0  529f3e0
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.0...v1.3.1
+
+[Changes][v1.3.1]
+
+
 <a name="v1.3.0"></a>
 # [v1.3.0](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.3.0) - 18 May 2024
 
@@ -208,6 +228,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.3.1]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.5...v1.3.0
 [v1.2.5]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.4...v1.2.5
 [v1.2.4]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.2.3...v1.2.4
