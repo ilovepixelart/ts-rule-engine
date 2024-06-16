@@ -38,8 +38,9 @@ Lightweight rule engine, written in typescript
 
 ```bash
 npm install ts-rule-engine
-yarn add ts-rule-engine
 pnpm add ts-rule-engine
+yarn add ts-rule-engine
+bun add ts-rule-engine
 ```
 
 ### 1. Defining a Rule
@@ -202,4 +203,3 @@ console.log(logger.messages)
 */
 
 ```
-
