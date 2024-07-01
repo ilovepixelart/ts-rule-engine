@@ -77,7 +77,7 @@
   },
   "devDependencies": {
     "@swc/cli": "0.3.12",
-    "@stylistic/eslint-plugin": "2.2.0",
+    "@stylistic/eslint-plugin": "2.3.0",
     "@swc/helpers": "0.5.11",
     "@swc/jest": "0.2.36",
     "@types/jest": "29.5.12",
