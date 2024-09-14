@@ -17,7 +17,7 @@ const config = {
     '<rootDir>/tests/**/*.test.ts',
   ],
   transform: {
-    '^.+\\.tsx?$': '@swc/jest',
+    '^.+\\.tsx?$': '@swc-node/jest',
   },
   testPathIgnorePatterns: [
     'node_modules',
