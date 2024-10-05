@@ -36,10 +36,7 @@ export class RuleEngine<T> {
   private terminate = false
   private logger: Logger
 
-  constructor(
-    fact: T = {} as T,
-    options: RuleEngineOptions = {},
-  ) {
+  constructor(fact: T = {} as T, options: RuleEngineOptions = {}) {
     this.fact = fact
     this.ignoreFactChanges = options.ignoreFactChanges ?? false
     this.iteration = 0
@@ -85,9 +82,13 @@ export class RuleEngine<T> {
         }
 
         let message = `Evaluating rule: ${rule.name ?? rule.id.toString()}`
-        const condition = await rule.condition(this.fact, { rule, stop: () => {
-          this.stop()
-        }, logger: this.logger })
+        const condition = await rule.condition(this.fact, {
+          rule,
+          stop: () => {
+            this.stop()
+          },
+          logger: this.logger,
+        })
         if (condition) {
           message += ' (condition met)'
           this.logger.info(message)
@@ -115,9 +116,13 @@ export class RuleEngine<T> {
   }
 
   private async executeRule(rule: Rule<T>): Promise<void> {
-    await rule.action(this.fact, { rule, stop: () => {
-      this.stop()
-    }, logger: this.logger })
+    await rule.action(this.fact, {
+      rule,
+      stop: () => {
+        this.stop()
+      },
+      logger: this.logger,
+    })
     this.iteration++
     if (this.ignoreFactChanges) {
       this.removeRule(rule.id)

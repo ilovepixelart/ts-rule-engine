@@ -1,26 +1,11 @@
 {
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.organizeImports.biome": "explicit"
   },
-  "[javascript]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  },
-  "[typescript]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  },
-  "eslint.options": {
-    "extensions": [
-      ".js",
-      ".ts"
-    ]
-  },
-  "eslint.validate": [
-    "javascript",
-    "typescript"
-  ],
   "cSpell.words": [
+    "biomejs",
     "clonedeep",
     "Dsonar",
     "ilovepixelart",
@@ -37,9 +22,5 @@
     "sonarjs",
     "sonarsource",
     "swcrc"
-  ],
-  "sonarlint.connectedMode.project": {
-    "connectionId": "ilovepixelart",
-    "projectKey": "ilovepixelart_ts-rule-engine"
-  }
+  ]
 }
