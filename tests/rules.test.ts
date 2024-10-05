@@ -14,8 +14,8 @@ interface Fact {
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-describe('Rules', function () {
-  describe('.run()', function () {
+describe('Rules', () => {
+  describe('.run()', () => {
     it('should run action when condition matches', async () => {
       const fact: Fact = {
         card: 'VISA',

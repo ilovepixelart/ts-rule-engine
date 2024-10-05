@@ -7,17 +7,17 @@ interface Fact {
 }
 
 class LogSink implements Logger {
-  messages: string[] = []
+  messages: unknown[] = []
 
-  info(message?: string): void {
+  info(message?: unknown): void {
     this.messages.push(message)
   }
 
-  warn(message?: string): void {
+  warn(message?: unknown): void {
     this.messages.push(message)
   }
 
-  error(message?: string): void {
+  error(message?: unknown): void {
     this.messages.push(message)
   }
 }
@@ -25,7 +25,7 @@ class LogSink implements Logger {
 const rule: Rule<Fact> = {
   id: 'always increment',
   weight: 1,
-  condition: (fact: Fact, { logger }) => {
+  condition: (_fact: Fact, { logger }) => {
     logger.info('Always true')
     return true
   },
@@ -36,7 +36,7 @@ const rule: Rule<Fact> = {
   },
 }
 
-describe('Logger', function () {
+describe('Logger', () => {
   it('logs to console if a logger is not provided in the options', async () => {
     const consoleSpy = jest.spyOn(global.console, 'info')
     const fact: Fact = {
