@@ -76,7 +76,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@swc-node/jest": "1.8.12",
-    "@types/jest": "29.5.13",
+    "@types/jest": "29.5.14",
     "@types/lodash.clonedeep": "4.5.9",
     "@types/lodash.isequal": "4.5.8",
     "@types/node": "22.7.7",
