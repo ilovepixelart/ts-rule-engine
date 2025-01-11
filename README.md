@@ -13,8 +13,6 @@ Lightweight rule engine, written in typescript
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-rule-engine&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-rule-engine)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-rule-engine&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-rule-engine)
 
-[![npm](https://nodei.co/npm/ts-rule-engine.png)](https://www.npmjs.com/package/ts-rule-engine)
-
 ## Supports and tested with
 
 ```json
