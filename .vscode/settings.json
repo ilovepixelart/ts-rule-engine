@@ -23,7 +23,6 @@
     "sonarcloud",
     "sonarjs",
     "sonarqube",
-    "sonarsource",
-    "swcrc"
+    "sonarsource"
   ]
 }

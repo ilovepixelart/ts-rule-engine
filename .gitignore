@@ -10,7 +10,7 @@ coverage
 # npm debug logs
 npm-debug.log
 
-# Webstorm
+# WebStorm
 .idea
 .env
 

@@ -1,3 +1,5 @@
+import { afterEach, describe, expect, it, vi } from 'vitest'
+
 import { RuleEngine } from '../src/rules'
 import type { Rule } from '../src/rules'
 import type { Logger } from '../src/rules'
@@ -37,8 +39,13 @@ const rule: Rule<Fact> = {
 }
 
 describe('Logger', () => {
+  const consoleSpyInfo = vi.spyOn(console, 'info')
+
+  afterEach(() => {
+    consoleSpyInfo.mockReset()
+  })
+
   it('logs to console if a logger is not provided in the options', async () => {
-    const consoleSpy = jest.spyOn(global.console, 'info')
     const fact: Fact = {
       counter: 0,
     }
@@ -48,11 +55,10 @@ describe('Logger', () => {
     await engine.run()
 
     expect(fact.counter).toBe(1)
-    expect(consoleSpy).toHaveBeenCalledTimes(4)
+    expect(consoleSpyInfo).toHaveBeenCalledTimes(4)
   })
 
   it('logs to logger if a logger is provided in the options', async () => {
-    const consoleSpy = jest.spyOn(global.console, 'info')
     const fact: Fact = {
       counter: 0,
     }
@@ -69,6 +75,6 @@ describe('Logger', () => {
     expect(logger.messages[1]).toBe('Evaluating rule: always increment (condition met)')
     expect(logger.messages[2]).toBe('Incremented counter')
     expect(logger.messages[3]).toBe('Termination condition met based on action.')
-    expect(consoleSpy).toHaveBeenCalledTimes(0)
+    expect(consoleSpyInfo).toHaveBeenCalledTimes(0)
   })
 })

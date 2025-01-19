@@ -19,7 +19,6 @@
     "backend",
     "ts",
     "typescript",
-    "swc",
     "bre",
     "rete",
     "rule",
@@ -38,9 +37,8 @@
     "dist",
     "src",
     "tests",
-    ".swcrc",
     "tsconfig.json",
-    "jest.config.ts",
+    "vite.config.mts",
     "biome.json"
   ],
   "exports": {
@@ -61,8 +59,8 @@
   "scripts": {
     "biome": "npx @biomejs/biome check",
     "biome:fix": "npx @biomejs/biome check --write .",
-    "test": "jest --config jest.config.ts --detectOpenHandles --coverage",
-    "test:open": "npm run test && open-cli coverage/lcov-report/index.html",
+    "test": "vitest run --coverage",
+    "test:open": "vitest run --coverage && open-cli coverage/lcov-report/index.html",
     "clean": "rm -rf ./dist",
     "build": "npm run clean && npm run build:cjs && npm run build:esm",
     "build:cjs": "tsc -p config/tsconfig.cjs.json",
@@ -70,19 +68,15 @@
     "release": "npm install && npm run biome && npm run build && np"
   },
   "dependencies": {
-    "lodash.clonedeep": "4.5.0",
-    "lodash.isequal": "4.5.0"
+    "lodash": "4.17.21"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@swc-node/jest": "1.8.12",
-    "@types/jest": "29.5.14",
-    "@types/lodash.clonedeep": "4.5.9",
-    "@types/lodash.isequal": "4.5.8",
+    "@types/lodash": "4.17.14",
     "@types/node": "22.10.7",
-    "jest": "29.7.0",
-    "merge": "2.1.1",
+    "@vitest/coverage-v8": "3.0.2",
     "open-cli": "8.0.0",
-    "typescript": "5.7.3"
+    "typescript": "5.7.3",
+    "vitest": "3.0.2"
   }
 }
