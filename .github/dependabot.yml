@@ -9,3 +9,12 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+      day: "monday"
+    commit-message:
+      prefix: "Update dependencies"
+    pull-request-branch-name:
+      separator: "-"
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
