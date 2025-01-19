@@ -1,3 +1,21 @@
+<a id="v1.3.6"></a>
+# [v1.3.6](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.3.6) - 2025-01-19
+
+- Biome  a2061a5
+- Sonar  3aecfa7
+- Merge pull request [#118](https://github.com/ilovepixelart/ts-rule-engine/issues/118) from ilovepixelart/feature/vitest  751695e
+- Sonar  2abb77d
+- Sonar  e498d2f
+- Vitest  7aa50af
+- Update changelog for v1.3.5  5b00000
+
+---
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.5...v1.3.6
+
+[Changes][v1.3.6]
+
+
 <a id="v1.3.5"></a>
 # [v1.3.5](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.3.5) - 2025-01-19
 
@@ -312,6 +330,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.3.6]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.5...v1.3.6
 [v1.3.5]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.4...v1.3.5
 [v1.3.4]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.3...v1.3.4
 [v1.3.3]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.2...v1.3.3
