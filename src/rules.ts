@@ -28,7 +28,7 @@ export interface RuleEngineOptions {
 
 export class RuleEngine<T> {
   private rules: Rule<T>[]
-  private fact: T
+  private readonly fact: T
   private ignoreFactChanges: boolean
   private iteration: number
   private readonly maxIterations: number | null
