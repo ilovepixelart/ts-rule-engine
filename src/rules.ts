@@ -1,5 +1,4 @@
-import cloneDeep from 'lodash.clonedeep'
-import isEqual from 'lodash.isequal'
+import { cloneDeep, isEqual } from 'lodash'
 
 export interface Data<T> {
   rule: Rule<T>

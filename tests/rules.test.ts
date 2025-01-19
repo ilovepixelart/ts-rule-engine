@@ -1,3 +1,5 @@
+import { vi, describe, it, expect, afterEach } from 'vitest'
+
 import { RuleEngine } from '../src/rules'
 import type { Rule } from '../src/rules'
 
@@ -15,6 +17,12 @@ interface Fact {
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 describe('Rules', () => {
+  const consoleSpyInfo = vi.spyOn(console, 'info')
+
+  afterEach(() => {
+    consoleSpyInfo.mockReset()
+  })
+
   describe('.run()', () => {
     it('should run action when condition matches', async () => {
       const fact: Fact = {
@@ -199,7 +207,6 @@ describe('Rules', () => {
     })
 
     it('should stop running rules when stop() is called in action after first rule', async () => {
-      jest.spyOn(console, 'info').mockImplementation()
       const fact: Fact = {
         card: 'VISA',
         transactionTotal: 200,
@@ -238,15 +245,13 @@ describe('Rules', () => {
       const engine = new RuleEngine(fact)
       engine.addRules(rules)
       await engine.run()
-      expect(console.info).toHaveBeenCalledTimes(2)
-      expect(console.info).toHaveBeenCalledWith('Termination condition met based on action.')
+      expect(consoleSpyInfo).toHaveBeenCalledTimes(2)
+      expect(consoleSpyInfo).toHaveBeenCalledWith('Termination condition met based on action.')
 
       expect(fact.result).toBe('rule 1')
     })
 
     it('should stop running rules when stop() is called in condition after first rule', async () => {
-      jest.spyOn(console, 'info').mockImplementation()
-
       const fact: Fact = {
         card: 'VISA',
         transactionTotal: 200,
@@ -285,9 +290,9 @@ describe('Rules', () => {
       const engine = new RuleEngine(fact)
       engine.addRules(rules)
       await engine.run()
-      expect(console.info).toHaveBeenCalledTimes(2)
-      expect(console.info).toHaveBeenCalledWith('Evaluating rule: rule 1 (condition met)')
-      expect(console.info).toHaveBeenCalledWith('Termination condition met based on action.')
+      expect(consoleSpyInfo).toHaveBeenCalledTimes(2)
+      expect(consoleSpyInfo).toHaveBeenCalledWith('Evaluating rule: rule 1 (condition met)')
+      expect(consoleSpyInfo).toHaveBeenCalledWith('Termination condition met based on action.')
     })
 
     it('should throw error on evaluating the condition', async () => {
@@ -337,8 +342,6 @@ describe('Rules', () => {
     })
 
     it('should stop running after first iteration when maxIterations=1', async () => {
-      jest.spyOn(console, 'info').mockImplementation()
-
       const fact: Fact = {
         card: 'VISA',
         transactionTotal: 200,
@@ -378,9 +381,9 @@ describe('Rules', () => {
       await engine.run()
 
       expect(fact.result).toBe('rule 1')
-      expect(console.info).toHaveBeenCalledTimes(2)
-      expect(console.info).toHaveBeenCalledWith('Evaluating rule: rule 1 (condition met)')
-      expect(console.info).toHaveBeenCalledWith('Termination condition met. Maximum iterations reached.')
+      expect(consoleSpyInfo).toHaveBeenCalledTimes(2)
+      expect(consoleSpyInfo).toHaveBeenCalledWith('Evaluating rule: rule 1 (condition met)')
+      expect(consoleSpyInfo).toHaveBeenCalledWith('Termination condition met. Maximum iterations reached.')
     })
 
     it('should update rule', async () => {
