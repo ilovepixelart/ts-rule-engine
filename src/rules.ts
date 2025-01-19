@@ -27,19 +27,21 @@ export interface RuleEngineOptions {
 }
 
 export class RuleEngine<T> {
-  private rules: Rule<T>[] = []
-  private fact: T = {} as T
+  private rules: Rule<T>[]
+  private fact: T
   private ignoreFactChanges: boolean
   private iteration: number
-  private maxIterations: number | null
-  private terminate = false
-  private logger: Logger
+  private readonly maxIterations: number | null
+  private terminate: boolean
+  private readonly logger: Logger
 
   constructor(fact: T = {} as T, options: RuleEngineOptions = {}) {
+    this.rules = []
     this.fact = fact
     this.ignoreFactChanges = options.ignoreFactChanges ?? false
     this.iteration = 0
     this.maxIterations = options.maxIterations ?? null
+    this.terminate = false
     this.logger = options.logger ?? console
   }
 

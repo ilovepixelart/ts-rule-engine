@@ -1,4 +1,4 @@
-import { vi, describe, it, expect, afterEach } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { RuleEngine } from '../src/rules'
 import type { Rule } from '../src/rules'
