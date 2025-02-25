@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { RuleEngine } from '../src/index'
-import type { Rule, Logger } from '../src/index'
+import type { Logger, Rule } from '../src/index'
 
 interface Fact {
   counter: number
