@@ -23,14 +23,14 @@ Lightweight rule engine, written in typescript
 
 ## Features
 
-- [x] Structure for rule definition
-- [x] Rerun rules after fact is updated
-- [x] Stop rule engine on any rule from executing further
-- [x] Infinite loop prevention with max iterations limit
-- [x] One time rule execution in sequence
-- [x] Rule weight for priority
-- [x] Supports ESM and CommonJS
-- [x] Logger interface for custom logging
+- Structure for rule definition
+- Rerun rules after fact is updated
+- Stop rule engine on any rule from executing further
+- Infinite loop prevention with max iterations limit
+- One time rule execution in sequence
+- Rule weight for priority
+- Logger interface for custom logging
+- Supports ESM and CommonJS
 
 ## Installation
 
