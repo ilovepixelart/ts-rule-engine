@@ -1,3 +1,18 @@
+<a id="v1.3.8"></a>
+# [v1.3.8](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.3.8) - 2025-03-02
+
+- Type check  54b9145
+- Merge pull request [#127](https://github.com/ilovepixelart/ts-rule-engine/issues/127) from ilovepixelart/feature/esm  b239da1
+- ESM  6490be0
+- Update changelog for v1.3.7  a2e2423
+
+---
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.7...v1.3.8
+
+[Changes][v1.3.8]
+
+
 <a id="v1.3.7"></a>
 # [v1.3.7](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.3.7) - 2025-03-01
 
@@ -360,6 +375,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.3.8]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.7...v1.3.8
 [v1.3.7]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.6...v1.3.7
 [v1.3.6]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.5...v1.3.6
 [v1.3.5]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.4...v1.3.5
