@@ -1,3 +1,33 @@
+<a id="v1.4.0"></a>
+# [v1.4.0](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.4.0) - 2025-06-14
+
+- Merge pull request [#141](https://github.com/ilovepixelart/ts-rule-engine/issues/141) from ilovepixelart/feature/dep  a12e34f
+- Dep and Node 24.x  4e9915c
+- Merge pull request [#140](https://github.com/ilovepixelart/ts-rule-engine/issues/140) from ilovepixelart/dependabot-npm_and_yarn-all-dependencies-cef776b6a8  13a41a0
+- Update dependencies: Bump the all-dependencies group with 3 updates  683c891
+- Merge pull request [#139](https://github.com/ilovepixelart/ts-rule-engine/issues/139) from ilovepixelart/dependabot-npm_and_yarn-all-dependencies-2d0fd6de72  595741f
+- Update dependencies: Bump the all-dependencies group with 3 updates  65fe94e
+- Merge pull request [#138](https://github.com/ilovepixelart/ts-rule-engine/issues/138) from ilovepixelart/dependabot-npm_and_yarn-all-dependencies-7c3a905ce5  9bbb4c9
+- Update dependencies: Bump the all-dependencies group with 4 updates  cfdd4cc
+- Merge pull request [#137](https://github.com/ilovepixelart/ts-rule-engine/issues/137) from ilovepixelart/dependabot-npm_and_yarn-all-dependencies-e921cfac15  85c4289
+- Update dependencies: Bump @types/node in the all-dependencies group  7291c64
+- Merge pull request [#136](https://github.com/ilovepixelart/ts-rule-engine/issues/136) from ilovepixelart/dependabot-npm_and_yarn-all-dependencies-9b69f603a9  528999f
+- Update dependencies: Bump the all-dependencies group with 3 updates  153ccec
+- Merge pull request [#135](https://github.com/ilovepixelart/ts-rule-engine/issues/135) from ilovepixelart/dependabot-npm_and_yarn-all-dependencies-5adaa4dc89  cf2a3dd
+- Update dependencies: Bump the all-dependencies group with 3 updates  a1ac88e
+- Merge pull request [#134](https://github.com/ilovepixelart/ts-rule-engine/issues/134) from ilovepixelart/dependabot-npm_and_yarn-all-dependencies-c918f85024  24ce245
+- Update dependencies: Bump the all-dependencies group with 2 updates  1be4174
+- Merge pull request [#133](https://github.com/ilovepixelart/ts-rule-engine/issues/133) from ilovepixelart/dependabot-npm_and_yarn-all-dependencies-3c694236ae  2064cc1
+- Update dependencies: Bump @types/node in the all-dependencies group  53abba9
+- Update changelog for v1.3.9  b886a0f
+
+---
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.9...v1.4.0
+
+[Changes][v1.4.0]
+
+
 <a id="v1.3.9"></a>
 # [v1.3.9](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.3.9) - 2025-04-05
 
@@ -397,6 +427,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.4.0]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.9...v1.4.0
 [v1.3.9]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.8...v1.3.9
 [v1.3.8]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.7...v1.3.8
 [v1.3.7]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.6...v1.3.7
