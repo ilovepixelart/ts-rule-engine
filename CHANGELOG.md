@@ -1,3 +1,25 @@
+<a id="v1.4.1"></a>
+# [v1.4.1](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.4.1) - 2025-08-17
+
+- Merge pull request [#150](https://github.com/ilovepixelart/ts-rule-engine/issues/150) from ilovepixelart/feature/dep  80cee43
+- Dep  78f2c57
+- Merge pull request [#149](https://github.com/ilovepixelart/ts-rule-engine/issues/149) from ilovepixelart/dependabot-npm_and_yarn-all-dependencies-783ba7711d  db904eb
+- Update dependencies: Bump the all-dependencies group with 5 updates  59c4726
+- Merge pull request [#148](https://github.com/ilovepixelart/ts-rule-engine/issues/148) from ilovepixelart/dependabot-npm_and_yarn-all-dependencies-cf3ee46c33  cf21b14
+- Update dependencies: Bump the all-dependencies group across 1 directory with 3 updates  5663e05
+- Merge pull request [#146](https://github.com/ilovepixelart/ts-rule-engine/issues/146) from ilovepixelart/feature/dep  32dda0d
+- Dep, biome  0ab4e09
+- Merge pull request [#143](https://github.com/ilovepixelart/ts-rule-engine/issues/143) from ilovepixelart/dependabot-npm_and_yarn-all-dependencies-57c4e814f3  262c442
+- Update dependencies: Bump the all-dependencies group with 2 updates  bef1a31
+- Update changelog for v1.4.0  e836dd4
+
+---
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.4.0...v1.4.1
+
+[Changes][v1.4.1]
+
+
 <a id="v1.4.0"></a>
 # [v1.4.0](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.4.0) - 2025-06-14
 
@@ -427,6 +449,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.4.1]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.4.0...v1.4.1
 [v1.4.0]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.9...v1.4.0
 [v1.3.9]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.8...v1.3.9
 [v1.3.8]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.7...v1.3.8
