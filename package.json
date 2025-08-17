@@ -1,6 +1,6 @@
 {
   "name": "ts-rule-engine",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Lightweight rule engine, written in typescript",
   "author": "ilovepixelart",
   "license": "MIT",
