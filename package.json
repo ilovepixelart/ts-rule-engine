@@ -66,8 +66,8 @@
     "release": "npm install && npm run biome && npm run type:check && npm run build && np"
   },
   "dependencies": {
-    "lodash": "4.17.21",
-    "@types/lodash": "4.17.20"
+    "lodash-es": "4.17.21",
+    "@types/lodash-es": "4.17.12"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.7",
