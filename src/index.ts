@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import { cloneDeep, isEqual } from 'lodash-es'
 
 export interface Data<T> {
   rule: Rule<T>
@@ -56,7 +56,7 @@ export class RuleEngine<T> {
   updateRule(id: string | number, newRule: Rule<T>): void {
     const index = this.rules.findIndex((rule) => rule.id === id)
     if (index !== -1) {
-      this.rules[index] = _.cloneDeep(newRule)
+      this.rules[index] = cloneDeep(newRule)
     }
   }
 
@@ -74,9 +74,9 @@ export class RuleEngine<T> {
 
   async run(): Promise<void> {
     try {
-      const before = _.cloneDeep(this.fact)
+      const before = cloneDeep(this.fact)
       this.sort()
-      for await (const rule of this.rules) {
+      for (const rule of this.rules) {
         if (this.maxIterations && this.iteration >= this.maxIterations) {
           this.logger.info('Termination condition met. Maximum iterations reached.')
           return
@@ -105,7 +105,7 @@ export class RuleEngine<T> {
         }
       }
 
-      if (!_.isEqual(before, this.fact) && !this.ignoreFactChanges) {
+      if (!isEqual(before, this.fact) && !this.ignoreFactChanges) {
         await this.run()
       } else {
         this.logger.info('Rule engine finished. With total iterations:', this.iteration)
