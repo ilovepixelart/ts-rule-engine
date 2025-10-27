@@ -1,3 +1,18 @@
+<a id="v1.4.3"></a>
+# [v1.4.3](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.4.3) - 2025-10-27
+
+- Merge pull request [#161](https://github.com/ilovepixelart/ts-rule-engine/issues/161) from ilovepixelart/feature/cjs  a886e32
+- Dep  570ea55
+- CJS  c6193fc
+- Update changelog for v1.4.2  893eddf
+
+---
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.4.2...v1.4.3
+
+[Changes][v1.4.3]
+
+
 <a id="v1.4.2"></a>
 # [v1.4.2](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.4.2) - 2025-10-25
 
@@ -480,6 +495,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.4.3]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.4.2...v1.4.3
 [v1.4.2]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.4.1...v1.4.2
 [v1.4.1]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.4.0...v1.4.1
 [v1.4.0]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.3.9...v1.4.0
