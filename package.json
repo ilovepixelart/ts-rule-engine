@@ -70,14 +70,14 @@
     "@types/lodash-es": "4.17.12"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.7",
+    "@biomejs/biome": "2.3.1",
     "@types/node": "24.9.1",
-    "@vitest/coverage-v8": "4.0.2",
+    "@vitest/coverage-v8": "4.0.4",
     "open-cli": "8.0.0",
     "pkgroll": "2.20.1",
     "simple-git-hooks": "2.13.1",
     "typescript": "5.9.3",
-    "vitest": "4.0.2"
+    "vitest": "4.0.4"
   },
   "simple-git-hooks": {
     "pre-commit": "npm run type:check",
