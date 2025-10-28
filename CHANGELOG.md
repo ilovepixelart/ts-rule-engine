@@ -1,3 +1,17 @@
+<a id="v1.4.4"></a>
+# [v1.4.4](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.4.4) - 2025-10-28
+
+- Merge pull request [#162](https://github.com/ilovepixelart/ts-rule-engine/issues/162) from ilovepixelart/feature/esm  deceb30
+- ESM  5d4411b
+- Update changelog for v1.4.3  631139b
+
+---
+
+https://github.com/ilovepixelart/ts-rule-engine/compare/v1.4.3...v1.4.4
+
+[Changes][v1.4.4]
+
+
 <a id="v1.4.3"></a>
 # [v1.4.3](https://github.com/ilovepixelart/ts-rule-engine/releases/tag/v1.4.3) - 2025-10-27
 
@@ -495,6 +509,7 @@ https://github.com/ilovepixelart/ts-rule-engine/compare/v1.0.1...v1.0.2
 [Changes][v1.0.2]
 
 
+[v1.4.4]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.4.3...v1.4.4
 [v1.4.3]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.4.2...v1.4.3
 [v1.4.2]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.4.1...v1.4.2
 [v1.4.1]: https://github.com/ilovepixelart/ts-rule-engine/compare/v1.4.0...v1.4.1
