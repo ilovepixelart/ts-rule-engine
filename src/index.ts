@@ -1,5 +1,6 @@
-import cloneDeep from 'lodash/cloneDeep'
-import isEqual from 'lodash/isEqual'
+// Using CJS lodash with .js extensions for ESM compatibility
+import cloneDeep from 'lodash/cloneDeep.js'
+import isEqual from 'lodash/isEqual.js'
 
 export interface Data<T> {
   rule: Rule<T>
