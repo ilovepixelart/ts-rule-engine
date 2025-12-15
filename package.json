@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "lodash": "4.17.21",
-    "@types/lodash": "4.17.20"
+    "@types/lodash": "4.17.21"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.4",
