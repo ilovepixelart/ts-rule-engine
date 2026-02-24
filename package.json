@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ilovepixelart/ts-rule-engine.git"
+    "url": "git+https://github.com/ilovepixelart/ts-rule-engine.git"
   },
   "bugs": {
     "url": "https://github.com/ilovepixelart/ts-rule-engine/issues"
@@ -63,21 +63,25 @@
     "test:open": "vitest run --coverage && open-cli coverage/lcov-report/index.html",
     "type:check": "tsc --noEmit",
     "build": "pkgroll --clean-dist",
-    "release": "npm install && npm run biome && npm run type:check && npm run build && np"
+    "release": "npm install && npm run biome && npm run type:check && npm run build && np --no-publish"
   },
   "dependencies": {
-    "lodash": "4.17.21",
-    "@types/lodash": "4.17.20"
+    "lodash": "4.17.23",
+    "@types/lodash": "4.17.24"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.4",
-    "@types/node": "24.10.0",
-    "@vitest/coverage-v8": "4.0.8",
+    "@biomejs/biome": "2.4.4",
+    "@types/node": "25.3.0",
+    "@vitest/coverage-v8": "4.0.18",
+    "np": "11.0.2",
     "open-cli": "8.0.0",
-    "pkgroll": "2.20.1",
+    "pkgroll": "2.26.3",
     "simple-git-hooks": "2.13.1",
     "typescript": "5.9.3",
-    "vitest": "4.0.8"
+    "vitest": "4.0.18"
+  },
+  "np": {
+    "publish": false
   },
   "simple-git-hooks": {
     "pre-commit": "npm run type:check",
