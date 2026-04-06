@@ -66,19 +66,19 @@
     "release": "npm install && npm run biome && npm run type:check && npm run build && np --no-publish"
   },
   "dependencies": {
-    "lodash": "4.17.23",
+    "lodash": "4.18.1",
     "@types/lodash": "4.17.24"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.4",
-    "@types/node": "25.3.0",
-    "@vitest/coverage-v8": "4.0.18",
-    "np": "11.0.2",
-    "open-cli": "8.0.0",
-    "pkgroll": "2.26.3",
+    "@biomejs/biome": "2.4.10",
+    "@types/node": "25.5.2",
+    "@vitest/coverage-v8": "4.1.2",
+    "np": "11.0.3",
+    "open-cli": "9.0.0",
+    "pkgroll": "2.27.0",
     "simple-git-hooks": "2.13.1",
-    "typescript": "5.9.3",
-    "vitest": "4.0.18"
+    "typescript": "6.0.2",
+    "vitest": "4.1.2"
   },
   "np": {
     "publish": false
