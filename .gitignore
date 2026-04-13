@@ -14,6 +14,6 @@ npm-debug.log
 .idea
 .env
 
-# System Files
-.DS_Store
-Thumbs.db
+# Claude Code
+.claude/
+CLAUDE.md

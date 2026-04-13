@@ -1,20 +1,33 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
+about: Suggest an idea for ts-rule-engine
 title: ''
-labels: ''
+labels: enhancement
 assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**Is your feature request related to a problem?**
+A clear and concise description of the problem. Ex. "I need to evaluate
+rules in parallel but the engine currently runs them sequentially …"
 
 **Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+What you want to happen — new `RuleEngineOptions` field, new `Rule<T>`
+shape, new iteration semantics, new logger hook, etc.
 
 **Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+Other approaches, workarounds, or existing options you've tried.
+
+**Scope**
+Which area does this touch?
+
+- [ ] rule definition / `Rule<T>` interface
+- [ ] engine options / `RuleEngineOptions`
+- [ ] iteration & termination behaviour
+- [ ] logging / observability
+- [ ] types / public API
+- [ ] other (describe below)
 
 **Additional context**
-Add any other context or screenshots about the feature request here.
+Anything else — related rule-engine implementations, links to papers
+or RFCs, examples from other libraries, etc.

@@ -12,14 +12,21 @@ Lightweight rule engine, written in typescript
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-rule-engine&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-rule-engine)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-rule-engine&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-rule-engine)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ilovepixelart_ts-rule-engine&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=ilovepixelart_ts-rule-engine)
+\
+[![Socket Badge](https://badge.socket.dev/npm/package/ts-rule-engine)](https://socket.dev/npm/package/ts-rule-engine)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ilovepixelart/ts-rule-engine/badge)](https://securityscorecards.dev/viewer/?uri=github.com/ilovepixelart/ts-rule-engine)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/12515/badge)](https://www.bestpractices.dev/projects/12515)
 
 ## Supports and tested with
 
 ```json
 {
-  "node": "18.x || 20.x || 22.x",
+  "node": "20.x || 22.x || 24.x"
 }
 ```
+
+Zero runtime dependencies. Consumer `npm install` adds one line to the
+install tree: `ts-rule-engine` itself.
 
 ## Features
 
@@ -111,15 +118,16 @@ const fact: Fact = {
 
 /* Define rule */
 const rule: Rule<Fact> = {
+  id: 'license-mit',
   condition: (fact) => {
     return fact.cost === 0
   },
-  consequence: (fact) => {
+  action: (fact, { stop }) => {
     fact.license = 'MIT'
     fact.description = 'License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s'
-    fact.stop()
+    stop()
   },
-};
+}
 
 /* Creating Rule Engine instance */
 const engine = new RuleEngine(fact)
@@ -133,7 +141,7 @@ console.log(fact)
   application: 'ts-rule-engine',
   cost: 0,
   license: 'MIT',
-  reason: 'License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s'
+  description: 'License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s'
 }
 */
 ```
