@@ -163,6 +163,7 @@ const fact: Fact = {
 
 /* Define rule */
 const rule: Rule<Fact> = {
+  id: 'license-mit',
   condition: (fact) => {
     return fact.cost === 0
   },
@@ -172,7 +173,7 @@ const rule: Rule<Fact> = {
     fact.description = 'License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s'
     stop()
   },
-};
+}
 
 /* Custom Logger */
 class CustomLogger implements Logger {
@@ -202,9 +203,9 @@ await engine.run()
 console.log(logger.messages)
 /*
 [
-  'Rule 1: Executing',
-  'Rule 1: Executed',
-  'Rule 1: Stopped'
+  'Evaluating rule: license-mit (condition met)',
+  'All Good',
+  'Termination condition met based on action.'
 ]
 */
 
