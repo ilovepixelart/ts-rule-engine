@@ -50,7 +50,7 @@ bun add ts-rule-engine
 
 ### 1. Defining a Rule
 
-A rule will consist of a condition and action, id, name and weight. The condition is a function that returns a boolean value. The action is a function that will be executed if the condition is true. The action function will be passed the fact, { rule, stop }. The stop function will stop the rule engine from executing further rules. This way you can control the flow of the rule engine.
+A rule will consist of a condition and action, id, name and weight. The condition is a function that returns a boolean value. The action is a function that will be executed if the condition is true. The action function will be passed the fact, along with `{ rule, stop, logger }`. The stop function will stop the rule engine from executing further rules. This way you can control the flow of the rule engine.
 
 ```typescript
 import type { Rule } from 'ts-rule-engine'
@@ -163,30 +163,31 @@ const fact: Fact = {
 
 /* Define rule */
 const rule: Rule<Fact> = {
+  id: 'license-mit',
   condition: (fact) => {
     return fact.cost === 0
   },
-  action: (fact, { logger }) => {
+  action: (fact, { stop, logger }) => {
     logger.info('All Good')
     fact.license = 'MIT'
     fact.description = 'License originating at the Massachusetts Institute of Technology (MIT) in the late 1980s'
-    fact.stop()
+    stop()
   },
-};
+}
 
 /* Custom Logger */
 class CustomLogger implements Logger {
-  messages: string[] = []
+  messages: unknown[] = []
 
-  info(message?: string, ...optionalParams: string[]): void {
+  info(message?: unknown, ...optionalParams: unknown[]): void {
     this.messages.push(message)
   }
 
-  warn(message?: string, ...optionalParams: string[]): void {
+  warn(message?: unknown, ...optionalParams: unknown[]): void {
     this.messages.push(message)
   }
 
-  error(message?: string, ...optionalParams: string[]): void {
+  error(message?: unknown, ...optionalParams: unknown[]): void {
     this.messages.push(message)
   }
 }
@@ -202,9 +203,9 @@ await engine.run()
 console.log(logger.messages)
 /*
 [
-  'Rule 1: Executing',
-  'Rule 1: Executed',
-  'Rule 1: Stopped'
+  'Evaluating rule: license-mit (condition met)',
+  'All Good',
+  'Termination condition met based on action.'
 ]
 */
 
