@@ -63,16 +63,16 @@
     "release": "npm install && npm run biome && npm run type:check && npm run type:check:tests && npm run build && np --no-publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.4",
-    "@types/node": "25.6.0",
-    "@vitest/coverage-v8": "4.1.4",
-    "fast-check": "4.6.0",
-    "np": "11.0.3",
+    "@biomejs/biome": "2.4.14",
+    "@types/node": "25.6.1",
+    "@vitest/coverage-v8": "4.1.5",
+    "fast-check": "4.7.0",
+    "np": "11.2.0",
     "open-cli": "9.0.0",
     "pkgroll": "2.27.0",
     "simple-git-hooks": "2.13.1",
     "typescript": "5.9.3",
-    "vitest": "4.1.4"
+    "vitest": "4.1.5"
   },
   "np": {
     "publish": false
@@ -82,6 +82,7 @@
     "pre-push": "npm run biome:fix"
   },
   "overrides": {
-    "esbuild": "0.25.0"
+    "esbuild": "0.25.0",
+    "tmp": "0.2.5"
   }
 }
