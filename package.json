@@ -12,9 +12,6 @@
     "url": "https://github.com/ilovepixelart/ts-rule-engine/issues"
   },
   "homepage": "https://github.com/ilovepixelart/ts-rule-engine#readme",
-  "directories": {
-    "examples": "examples"
-  },
   "keywords": [
     "backend",
     "ts",
@@ -31,15 +28,10 @@
     "inference system"
   ],
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "files": [
-    "dist",
-    "src",
-    "tests",
-    "tsconfig.json",
-    "vite.config.mts",
-    "biome.json"
+    "dist"
   ],
   "type": "module",
   "exports": {
@@ -55,30 +47,32 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
-    "prepare": "simple-git-hooks",
     "biome": "npx @biomejs/biome check",
     "biome:fix": "npx @biomejs/biome check --write .",
     "test": "vitest run --coverage",
     "test:open": "vitest run --coverage && open-cli coverage/lcov-report/index.html",
+    "clean": "rm -rf ./dist",
     "type:check": "tsc --noEmit",
+    "type:check:tests": "tsc --noEmit -p tests/tsconfig.json",
     "build": "pkgroll --clean-dist",
-    "release": "npm install && npm run biome && npm run type:check && npm run build && np --no-publish"
-  },
-  "dependencies": {
-    "lodash": "4.17.23",
-    "@types/lodash": "4.17.24"
+    "release": "npm install && npm run biome && npm run type:check && npm run type:check:tests && npm run build && np --no-publish"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.4",
-    "@types/node": "25.3.0",
-    "@vitest/coverage-v8": "4.0.18",
-    "np": "11.0.2",
-    "open-cli": "8.0.0",
-    "pkgroll": "2.26.3",
+    "@types/node": "25.6.0",
+    "@vitest/coverage-v8": "4.1.4",
+    "fast-check": "4.6.0",
+    "np": "11.0.3",
+    "open-cli": "9.0.0",
+    "pkgroll": "2.27.0",
     "simple-git-hooks": "2.13.1",
     "typescript": "5.9.3",
-    "vitest": "4.0.18"
+    "vitest": "4.1.4"
   },
   "np": {
     "publish": false

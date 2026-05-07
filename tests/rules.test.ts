@@ -100,7 +100,9 @@ describe('Rules', () => {
         },
         action: (fact, { rule }) => {
           fact.result = true
-          fact.ruleName = rule.name
+          if (rule.name !== undefined) {
+            fact.ruleName = rule.name
+          }
           fact.ruleID = rule.id
         },
       }
