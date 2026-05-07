@@ -176,7 +176,7 @@ const rule: Rule<Fact> = {
 
 /* Custom Logger */
 class CustomLogger implements Logger {
-  messages: string[] = []
+  messages: unknown[] = []
 
   info(message?: unknown, ...optionalParams: unknown[]): void {
     this.messages.push(message)
