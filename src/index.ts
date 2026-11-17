@@ -53,7 +53,7 @@ const cloneEntries = (value: object, seen: Map<object, unknown>): unknown => {
 const cloneValue = (value: unknown, seen: Map<object, unknown>): unknown => {
   if (!isObject(value)) return value
   if (seen.has(value)) return seen.get(value)
-  if (value instanceof Date) return new Date(value.getTime())
+  if (value instanceof Date) return new Date(value)
   if (value instanceof RegExp) return new RegExp(value)
   return cloneEntries(value, seen)
 }
