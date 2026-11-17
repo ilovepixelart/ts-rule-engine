@@ -68,10 +68,10 @@
     "@vitest/coverage-v8": "4.1.5",
     "fast-check": "4.7.0",
     "open-cli": "9.0.0",
-    "pkgroll": "2.27.0",
+    "pkgroll": "2.29.1",
     "simple-git-hooks": "2.13.1",
     "typescript": "5.9.3",
-    "vitest": "4.1.5"
+    "vitest": "4.1.11"
   },
   "simple-git-hooks": {
     "pre-commit": "npm run type:check",
