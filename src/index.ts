@@ -147,6 +147,10 @@ export class RuleEngine<T> {
     })
     if (!condition) {
       this.logger.info(`${label} (skipped)`)
+      if (this.terminate) {
+        this.logger.info('Termination condition met based on condition.')
+        return true
+      }
       return false
     }
     this.logger.info(`${label} (condition met)`)

@@ -74,6 +74,45 @@ describe('stop()', () => {
     expect(logger.messages).toEqual(['Evaluating rule: guard (condition met)', 'Termination condition met based on action.'])
   })
 
+  it('called in a condition that returns false: no later rule fires', async () => {
+    const logger = new LogSink()
+    const fact: Fact = { fired: [] }
+    const engine = new RuleEngine(fact, { logger })
+    engine.addRule({
+      id: 'guard',
+      weight: 10,
+      condition: (_f, { stop }) => {
+        stop()
+        return false
+      },
+      action: (f) => {
+        f.fired.push('guard')
+      },
+    })
+    engine.addRule(later)
+    await engine.run()
+    expect(fact.fired).toEqual([])
+    expect(logger.messages).toEqual(['Evaluating rule: guard (skipped)', 'Termination condition met based on condition.'])
+  })
+
+  it('called on the engine while a condition is pending, condition returns false: no later rule fires', async () => {
+    const fact: Fact = { fired: [] }
+    const engine = new RuleEngine(fact, { logger: new LogSink() })
+    engine.addRule({
+      id: 'guard',
+      weight: 10,
+      condition: async () => {
+        await Promise.resolve()
+        engine.stop()
+        return false
+      },
+      action: () => {},
+    })
+    engine.addRule(later)
+    await engine.run()
+    expect(fact.fired).toEqual([])
+  })
+
   it('control: a condition that returns false without stop(): later rules fire', async () => {
     const logger = new LogSink()
     const fact: Fact = { fired: [] }
