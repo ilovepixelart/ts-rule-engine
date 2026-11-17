@@ -54,6 +54,7 @@
   "scripts": {
     "biome": "npx @biomejs/biome check",
     "biome:fix": "npx @biomejs/biome check --write .",
+    "lint:package": "publint --strict && attw --pack .",
     "test": "vitest run --coverage",
     "test:open": "vitest run --coverage && open-cli coverage/lcov-report/index.html",
     "clean": "rm -rf ./dist",
@@ -63,6 +64,7 @@
     "release": "npm install && npm run biome && npm run type:check && npm run type:check:tests && npm run build && np --no-publish"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "0.18.5",
     "@biomejs/biome": "2.6.8",
     "@types/node": "25.9.9",
     "@typescript/typescript6": "6.0.2",
@@ -70,13 +72,14 @@
     "fast-check": "4.10.2",
     "open-cli": "9.0.0",
     "pkgroll": "2.29.1",
+    "publint": "0.3.25",
     "simple-git-hooks": "2.14.0",
     "typescript": "7.0.2",
     "vitest": "5.1.0"
   },
   "simple-git-hooks": {
     "pre-commit": "npm run type:check",
-    "pre-push": "npm run biome:fix"
+    "pre-push": "npm run biome"
   },
   "np": {
     "publish": false
