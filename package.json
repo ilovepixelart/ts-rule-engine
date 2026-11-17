@@ -63,13 +63,13 @@
     "release": "npm install && npm run biome && npm run type:check && npm run type:check:tests && npm run build && np --no-publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.14",
+    "@biomejs/biome": "2.6.8",
     "@types/node": "25.6.1",
     "@vitest/coverage-v8": "4.1.5",
-    "fast-check": "4.7.0",
+    "fast-check": "4.10.2",
     "open-cli": "9.0.0",
-    "pkgroll": "2.27.0",
-    "simple-git-hooks": "2.13.1",
+    "pkgroll": "2.29.1",
+    "simple-git-hooks": "2.14.0",
     "typescript": "5.9.3",
     "vitest": "4.1.5"
   },
