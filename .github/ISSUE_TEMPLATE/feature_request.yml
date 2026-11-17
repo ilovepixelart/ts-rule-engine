@@ -1,0 +1,34 @@
+name: Feature request
+description: Suggest an idea for ts-rule-engine
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is the problem or missing behavior?
+      placeholder: I need to evaluate rules in parallel, but the engine runs them sequentially ...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: For example, a new `RuleEngineOptions` field, a new `Rule<T>` shape, new iteration semantics, or a new logger hook.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches, workarounds, or existing options you have tried.
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: Which area does this touch?
+      multiple: true
+      options:
+        - Rule definition (Rule<T>)
+        - Engine options (RuleEngineOptions)
+        - Iteration and termination behavior
+        - Logging and observability
+        - Types and public API
+        - Other

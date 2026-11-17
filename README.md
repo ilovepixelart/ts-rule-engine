@@ -21,9 +21,11 @@ Lightweight rule engine, written in typescript
 
 ```json
 {
-  "node": "20.x || 22.x || 24.x"
+  "node": ">=20"
 }
 ```
+
+CI tests on Node.js `22.x`, `24.x`, and `26.x`.
 
 Zero runtime dependencies. Consumer `npm install` adds one line to the
 install tree: `ts-rule-engine` itself.
@@ -210,3 +212,17 @@ console.log(logger.messages)
 */
 
 ```
+
+## Contributing
+
+Check [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Check my other projects
+
+- [ts-migrate-mongoose](https://github.com/ilovepixelart/ts-migrate-mongoose) - Migration framework for mongoose
+- [ts-patch-mongoose](https://github.com/ilovepixelart/ts-patch-mongoose) - Patch history & events plugin for mongoose
+- [ts-cache-mongoose](https://github.com/ilovepixelart/ts-cache-mongoose) - Cache plugin for mongoose Queries and Aggregate (in-memory, redis)
