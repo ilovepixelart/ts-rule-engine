@@ -1,0 +1,43 @@
+name: Bug report
+description: Something in ts-rule-engine is not working as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not use this form for security issues. Report those privately via a [GitHub Security Advisory](https://github.com/ilovepixelart/ts-rule-engine/security/advisories/new); see SECURITY.md.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you do, and what went wrong? Include error messages, stack traces, and the logger output if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: For example, which rule should have fired, which fact fields should have changed, the iteration count, or `stop()` semantics.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: The fact shape and value, the rule definitions, and the engine construction and `run()` call.
+      render: typescript
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: ts-rule-engine, Node.js, and OS
+      placeholder: "ts-rule-engine 1.5.2, Node 24.11, macOS 15"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Iteration limits, `ignoreFactChanges` usage, async condition or action timing, custom logger output, and so on.

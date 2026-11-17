@@ -47,9 +47,9 @@ In scope:
 Out of scope:
 
 - Vulnerabilities in development-only dependencies listed under
-  `devDependencies` — those do not ship in the published package.
+  `devDependencies`, which do not ship in the published package.
 - Runtime behaviour caused by user-supplied `condition` or `action`
-  callbacks that themselves contain insecure code — the engine executes
+  callbacks that themselves contain insecure code: the engine executes
   those functions as provided and cannot sandbox them.
 
 ## Supply Chain
@@ -81,7 +81,7 @@ maps to a concrete step in that attack chain.
   in a malicious transitive dep still cannot run `postinstall` code
   from *this* package.
 - **`files: ["dist"]`** ships only the `dist/` directory. No `src`,
-  no `tests`, no `tsconfig.json`, no `vite.config.mts` — the
+  no `tests`, no `tsconfig.json`, no `vite.config.mts`. The
   attack surface inside the tarball is strictly the pre-built JS
   bundle, not arbitrary TypeScript that could be re-executed.
 
@@ -101,15 +101,15 @@ maps to a concrete step in that attack chain.
   [predicate type `https://slsa.dev/provenance/v1`] uploaded to
   GitHub's native attestation store), then uploads the tarball as a
   workflow artifact; `publish` downloads that artifact and runs
-  `npm publish` — npm-registry provenance is emitted automatically
+  `npm publish`; npm-registry provenance is emitted automatically
   via `publishConfig.provenance: true`. **Every action in every
-  workflow is SHA-pinned** — there are no tag-pin exceptions.
+  workflow is SHA-pinned**; there are no tag-pin exceptions.
 
 ### Release verifiability
 
 [SLSA v1.2's distributing-provenance guidance](https://slsa.dev/spec/v1.2/distributing-provenance)
 states that producers **MUST** publish attestations in at least one
-place and **SHOULD** publish in more than one — the rationale being
+place and **SHOULD** publish in more than one, the rationale being
 that independent channels give consumers more than one way to
 verify and remove any single point of failure. This project
 publishes the same SLSA v1 build provenance in **three independent
@@ -117,60 +117,59 @@ channels** on every release (with the third channel carrying two
 separate artifacts that target different verification tools, giving
 four attestation files in total across the three channels):
 
-1. **npm registry provenance** — emitted automatically by
+1. **npm registry provenance**: emitted automatically by
    `npm publish` because `publishConfig.provenance: true` is set in
    `package.json`. Verifiable with
    [`npm audit signatures`](https://docs.npmjs.com/generating-provenance-statements).
-2. **GitHub native attestation store** — produced by
+2. **GitHub native attestation store**: produced by
    [`actions/attest@v4`](https://github.com/actions/attest) in the
    `build` job. Stored at
    [github.com/ilovepixelart/ts-rule-engine/attestations](https://github.com/ilovepixelart/ts-rule-engine/attestations)
-   and verifiable through `gh attestation verify` — no extra tooling
+   and verifiable through `gh attestation verify`, with no extra tooling
    install required by consumers who already have the `gh` CLI.
-3. **GitHub Release assets** — two sidecar files attached to the
+3. **GitHub Release assets**: two sidecar files attached to the
    GitHub Release, carrying the same DSSE envelope at the innermost
    layer but in different outer containers for different verification
    flows:
-   - **`<tarball>.sigstore.json`** — a straight copy of
+   - **`<tarball>.sigstore.json`**: a straight copy of
      `actions/attest`'s output, a full Sigstore bundle
      ([`application/vnd.dev.sigstore.bundle.v0.3+json`](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto)).
      Carries the Fulcio certificate and the Rekor inclusion proof
      inline, so consumers can verify offline without querying Rekor.
      Parsed by `gh attestation verify --bundle` and other
      Sigstore-native tooling.
-   - **`<tarball>.intoto.jsonl`** — a spec-compliant
+   - **`<tarball>.intoto.jsonl`**: a spec-compliant
      [in-toto attestation v1 bundle](https://github.com/in-toto/attestation/blob/main/spec/v1/bundle.md):
      JSON Lines of DSSE envelopes, one envelope per line. Extracted
-     from the Sigstore bundle via `jq -c '.dsseEnvelope'` — this is
+     from the Sigstore bundle via `jq -c '.dsseEnvelope'`; this is
      a genuine in-toto bundle, not a renamed Sigstore bundle.
      Parsed by `slsa-verifier verify-artifact`, which queries Rekor
      for the certificate and inclusion proof via the signature hash.
 
-   The two files are **not** duplicate signing material — they are
+   The two files are **not** duplicate signing material: they are
    the same cryptographic signature presented in two different
    container formats that different verification tools understand.
 
-**Status:** the hardened pipeline lands with the first release after
-this change. Earlier releases predate the new `publish.yaml` entirely
-— no provenance in any channel. Starting with the first release under
-the hardened pipeline, every published tarball will ship with npm
-provenance, GitHub attestation-store provenance, and both
+**Status:** releases from `1.4.5` onward carry npm registry
+provenance; earlier releases carry none. `1.5.0` is the first release
+built by the current `publish.yaml`, and every release from it on
+ships npm provenance, GitHub attestation-store provenance, and both
 release-asset sidecars.
 
 ### Dev-environment isolation
 
-- **Dependabot is configured for `github-actions` only**, not `npm`
-  (see `.github/dependabot.yml`). Every runtime or dev-dep bump
-  requires a manual, reviewed PR — the lib never auto-merges a new
-  version of anything that reaches consumer installs. GitHub Actions
-  SHA pins do get auto-bumped weekly because those pins are meant to
-  rot fast and auto-bumping keeps Scorecard's Pinned-Dependencies at
-  maximum.
+- **Dependabot proposes updates and never merges them.** It opens
+  weekly pull requests for npm dependencies (minor and patch updates
+  grouped, majors after a 7-day cooldown, security updates without
+  delay) and for the SHA pins of GitHub Actions (see
+  `.github/dependabot.yml`). Each one passes the same CI as any other
+  change and is merged by hand; no workflow auto-merges a dependency
+  update.
 - **CI action dependencies are SHA-pinned with trailing version
   comments**, so a compromised upstream action's new tag cannot
   silently run with our privileges.
 - **Maintainer npm account uses 2FA / WebAuthn.** This is the single
-  defence that cannot be enforced from the repository — it is a
+  defence that cannot be enforced from the repository: it is a
   maintainer-side responsibility. A reviewer auditing this project's
   supply-chain posture should treat it as a documented commitment:
   if 2FA were disabled, the OIDC trusted-publishing defence above
@@ -182,11 +181,11 @@ Anyone integrating `ts-rule-engine` into a production pipeline
 has four verification paths available, each exercising one of the
 distribution channels documented above. Pick the one that matches
 the tooling you already trust and the environment you're deploying
-to — the trust model is identical (all four resolve to the same
+to; the trust model is identical (all four resolve to the same
 Fulcio-issued certificate binding the signature to the exact
-GitHub Actions workflow run). For releases earlier than the
-hardened pipeline, `npm audit signatures` only verifies npm
-registry signatures without provenance.
+GitHub Actions workflow run). For releases earlier than `1.4.5`,
+`npm audit signatures` only verifies npm registry signatures,
+because those releases carry no provenance.
 
 **Primary check (no extra tooling):**
 
@@ -212,7 +211,7 @@ gh attestation verify ts-rule-engine-X.Y.Z.tgz \
 ```
 
 The `--signer-workflow` flag pins the verification to the exact
-workflow file that produced the attestation — a stronger claim than
+workflow file that produced the attestation, a stronger claim than
 just `--repo` alone, because it blocks any other workflow in the
 same repository from producing attestations that would pass
 verification.
@@ -245,7 +244,7 @@ workflow file that produced it. The split is about which tool you
 trust and which dependencies you have installed, not about which
 path is more secure.
 
-## OpenSSF Scorecard — Accepted Findings
+## OpenSSF Scorecard: Accepted Findings
 
 The project runs [OpenSSF Scorecard](https://securityscorecards.dev/) on a
 weekly schedule (see `.github/workflows/scorecard.yaml`). The following
@@ -253,20 +252,20 @@ checks intentionally stay below their maximum score; the rationale is
 documented here so future reviewers understand why they are not bugs to
 chase:
 
-- **`Code-Review`** — Scorecard requires that recent commits be approved
+- **`Code-Review`**: Scorecard requires that recent commits be approved
   by a reviewer distinct from the author. `ts-rule-engine` has a single
   active maintainer, so every change is inherently self-merged.
   Requiring approvals would either block all work or force self-approvals
-  from a second account — neither offers real review value. We rely on
+  from a second account, and neither offers real review value. We rely on
   automated gates (CI status checks, Scorecard, SonarCloud, Biome, type
   checks) to catch issues instead of human review.
 
-- **`Contributors`** — Scorecard wants contributors from 3+ distinct
+- **`Contributors`**: Scorecard wants contributors from 3+ distinct
   organizations in the last 30 commits. As a personal project this is
   structurally unattainable; the score will move organically if external
   contributors join.
 
-- **`CII-Best-Practices`** — tracked at
+- **`CII-Best-Practices`**: tracked at
   [bestpractices.dev/projects/12515](https://www.bestpractices.dev/en/projects/12515).
   The project targets the "passing" tier; "silver" and "gold" require
   multiple reviewers and documented security-review processes that are

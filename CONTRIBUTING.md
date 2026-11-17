@@ -10,7 +10,7 @@
 
 ```bash
 npm install
-npx simple-git-hooks   # one-time — installs pre-commit / pre-push hooks
+npx simple-git-hooks   # one-time: installs pre-commit / pre-push hooks
 ```
 
 The `prepare: simple-git-hooks` lifecycle script was intentionally dropped
@@ -28,8 +28,9 @@ npm run test           # vitest with coverage
 npm run build          # pkgroll --clean-dist
 ```
 
-All five should be green before opening a PR. CI runs the same gates on
-Node 20.x / 22.x (tests) and 24.x (biome + sonar + type:check:tests).
+All five should be green before opening a PR. CI runs `type:check` and the
+tests on Node 22.x and 24.x, and biome, `type:check:tests`, the tests and the
+SonarCloud scan on 26.x.
 
 ## Reporting security issues
 
