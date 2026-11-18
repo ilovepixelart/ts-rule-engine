@@ -61,7 +61,8 @@
     "type:check": "tsc --noEmit",
     "type:check:tests": "tsc --noEmit -p tests/tsconfig.json",
     "build": "pkgroll --clean-dist",
-    "release": "npm install && npm run biome && npm run type:check && npm run type:check:tests && npm run build && np --no-publish"
+    "release": "npm install && npm run biome && npm run type:check && npm run type:check:tests && npm run build && np --no-publish",
+    "test:e2e": "npm run build && node e2e/run.mjs"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",
